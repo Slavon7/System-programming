@@ -1,0 +1,26 @@
+#define IDI_ICON 1001
+IDI_ICON ICON DISCARDABLE "Icon.ico"
+IDI_ICON EQU 1001;
+TheMsg db Уѕерва€ программа с ресурсом",0 ; сообщение
+Caption db У»спользование своей иконки",0 ; заглавие окна
+params MSGBOXPARAMSA <>
+.code
+entry_point proc
+mov params.cbSize, SIZEOF MSGBOXPARAMSA; размер структуры
+mov params.hwndOwner, 0; дескриптор окна владельца
+invoke GetModuleHandle, 0; получение дескриптора программы
+mov params.hInstance, rax; сохранение дескриптора программы
+lea rax, TheMsg
+mov params.lpszText, rax; адрес сообщени€
+lea rax, Caption
+mov params.lpszCaption, rax; адрес заглави€ окна
+mov params.dwStyle, MB_USERICON; стиль окна
+mov params.lpszIcon, IDI_ICON; ресурс значка
+mov params.dwContextHelpId, 0; контекст справки
+mov params.lpfnMsgBoxCallback, 0;
+mov params.dwLanguageId, LANG_NEUTRAL; €зык сообщени€
+lea rcx, params
+invoke MessageBoxIndirect
+invoke ExitProcess, 0
+entry_point endp
+end

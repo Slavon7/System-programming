@@ -1,0 +1,38 @@
+**********************************************
+Files that must be obtained from Microsoft
+Usually this is from a Visual Studio download.
+**********************************************
+
+---------------
+bin64 directory
+---------------
+cvtres.exe
+dumpbin.exe
+editbin.exe
+lib.exe
+link.exe
+link.exe.config
+ml64.exe
+msobj140.dll
+mspdb140.dll
+mspdbcmf.exe
+mspdbcore.dll
+mspdbsrv.exe
+mspdbst.dll
+mspft140.dll
+msvcdis140.dll
+msvcp140.dll
+
+-----------
+In dir 1033
+-----------
+bscmakeui.dll
+clui.dll
+cvtresui.dll
+linkui.dll
+LocalESPCui.dll
+mspdbcmfui.dll
+mspft140ui.dll
+pgort140ui.dll
+pgoui.dll
+
